@@ -1,0 +1,11 @@
+<?php if( $this->getCount() ): ?>
+<div class="box-collateral box-tags content-box">
+	<div class="title-box">
+    	<h2><?php echo $this->__('Tags') ?></h2>
+    </div>
+    <?php echo $this->getChildHtml('list_before')?>
+    <ul id="<?php echo $this->getUniqueHtmlId('product-tags_'); ?>" class="product-tags">
+        <?php echo $this->renderTags('<li><a href="%1$s">%2$s</a></li>') ?>
+    </ul>
+</div>
+<?php endif; ?>
