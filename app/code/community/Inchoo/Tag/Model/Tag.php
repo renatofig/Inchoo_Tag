@@ -39,6 +39,15 @@ class Inchoo_Tag_Model_Tag extends Mage_Tag_Model_Tag
         return true;
     }
     
+    public function getRelatedProductIds()
+    {
+        return Mage::getModel('tag/tag_relation')
+            ->setTagId($this->getTagId())
+            ->setStatusFilter($this->getStatusFilter())
+            ->setCustomerId(null)
+            ->getProductIds();
+    }
+    
     public function getName()
     {
         if (!$this->hasTagName()) {
